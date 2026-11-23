@@ -4,6 +4,12 @@ A mobile-first React catalogue for a traditional clothing store in Rajwada, Indo
 
 > **Demo project:** the current store name, contact details, products, photographs and location copy are demo placeholders. Follow the CLIENT LAUNCH CHECKLIST below before handing this to a real shop owner.
 
+## Live demo
+
+https://abeersharma125518.github.io/clothing-store-catalogue/
+
+This demo is deployed automatically from `main` with GitHub Pages. The Pages build uses `npm run build:pages`, which applies the correct base path for a GitHub Pages project site.
+
 ## Run locally
 
 ```bash
