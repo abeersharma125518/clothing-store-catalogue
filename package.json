@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "build:pages": "tsc -b && vite build --base=/clothing-store-catalogue/",
     "preview": "vite preview",
     "typecheck": "tsc -b --noEmit"
   },
