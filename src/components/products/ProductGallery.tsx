@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { store } from '../../data/store'
+import { assetUrl } from '../../utils/assets'
 import ImageWithFallback from '../common/ImageWithFallback'
 
 export default function ProductGallery({ images, name }: { images: string[]; name: string }) {
@@ -38,7 +39,7 @@ export default function ProductGallery({ images, name }: { images: string[]; nam
               }`}
             >
               {image ? (
-                <img src={image} alt="" loading="lazy" className="h-full w-full object-cover" />
+                <img src={assetUrl(image)} alt="" loading="lazy" className="h-full w-full object-cover" />
               ) : (
                 <div className="h-full w-full bg-sand" />
               )}

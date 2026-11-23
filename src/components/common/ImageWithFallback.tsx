@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { ImageOff } from 'lucide-react'
+import { assetUrl } from '../../utils/assets'
 
 type Props = {
   src: string
@@ -23,8 +24,10 @@ export default function ImageWithFallback({
   eager = false,
 }: Props) {
   const [failed, setFailed] = useState(false)
+  const imageSrc = assetUrl(src)
+  const imageSmallSrc = smallSrc ? assetUrl(smallSrc) : undefined
 
-  useEffect(() => setFailed(false), [src])
+  useEffect(() => setFailed(false), [imageSrc])
 
   return (
     <div className={`relative overflow-hidden bg-sand ${aspect} ${className}`}>
@@ -35,9 +38,9 @@ export default function ImageWithFallback({
         </div>
       ) : (
         <img
-          src={src}
-          srcSet={smallSrc ? `${smallSrc} 360w, ${src} 720w` : undefined}
-          sizes={smallSrc ? sizes : undefined}
+          src={imageSrc}
+          srcSet={imageSmallSrc ? `${imageSmallSrc} 360w, ${imageSrc} 720w` : undefined}
+          sizes={imageSmallSrc ? sizes : undefined}
           alt={alt}
           loading={eager ? 'eager' : 'lazy'}
           decoding="async"
